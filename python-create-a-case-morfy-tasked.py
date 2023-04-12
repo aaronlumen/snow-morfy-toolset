@@ -16,12 +16,12 @@ import json
 #
 #######################################################################################################################
 # Morpheus API URL
-morpheus_url = 'https://morpheus.example.com/api'
+morpheus_url = 'https://morpheus.surina.shop/api'
 #######################################################################################################################
 # Variable area
 #######################################################################################################################
 # ServiceNow API URL
-servicenow_url = 'https://example.service-now.com/api/now/v2/table/incident'
+servicenow_url = 'https://surina.service-now.com/api/now/v2/table/incident'
 #######################################################################################################################
 # Morpheus credentials
 morpheus_user = 'username'
@@ -66,9 +66,8 @@ response = requests.post(servicenow_url, auth=(servicenow_user, servicenow_passw
 case_data = response.json()['result']
 #######################################################################################################################
 # Print the ServiceNow Case number
-print(f'###############################################################################################################################################################################################')
+print(f'############################################################################################################    ')
 print(f'ServiceNow Case created: {case_data["number"]}')
-print(f'Creds: {install_base_item_url,servicenow_url,servicenow_user,description,headers,response,tenant_id,morpheus_id,morpheus_instance_data,case_payload
 #######################################################################################################################
 
 #######################################################################################################################
@@ -84,16 +83,19 @@ print(f'Creds: {install_base_item_url,servicenow_url,servicenow_user,description
 # After which we then define the Tenant ID, Morpheus ID and/or Install Base Item ID!
 #
 # But wait... there's more!  
-# After a little relax time, we take happy time seriously, so we prepare ourselves for the next adventure where we use the Morpheus API to get the Instance details based on the Morpheus ID
+# After a little relax time, we take happy time seriously, so we prepare ourselves for the next adventure where 
+# we use the Morpheus API to get the Instance details based on the Morpheus ID
 # And to be fair about it, we use the ServiceNow API to get the Install Base Item details based on the Install Base Item ID.
 #
 #########################################################################################################################
 # HammerTime! Once ready, we create the ServiceNow Case payload with the necessary fields, including the following:
-# short description, description, caller ID ( tenant ID), Morpheus Instance ID and Morpheus instance Name, and Install Base Item ID and/or Name.
+# short description, description, caller ID ( tenant ID), Morpheus Instance ID and Morpheus instance Name, 
+# and Install Base Item ID and/or Name.
 #
 # Now we're cooking with gas finally; 
 #########################################################################################################################
-# We use the ServiceNow API to create the case with the payload we just created,and we print the ServiceNow Case number once it's created which can be obtained using results, piping it out or any # 
+# We use the ServiceNow API to create the case with the payload we just created,and we print the ServiceNow Case number 
+# once it's created which can be obtained using results, piping it out or any # 
 # preferred mechanism to cache or store the output.
 #
 #######################################################################################################################
